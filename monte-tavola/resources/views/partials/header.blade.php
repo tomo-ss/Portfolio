@@ -1,16 +1,20 @@
-{{-- resources/views/partials/header.blade.php --}}
-<header class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
-    {{-- Logo --}}
-    <h1 class="text-xl font-bold text-green-800">
-        <a href="/" class="hover:text-green-600">Monte Tavola</a>
-    </h1>
+@php
+    $sections = View::getSections();
+    $isWideHeader = isset($sections['header_style']) && trim($sections['header_style']) === 'wide';
+@endphp
 
-    {{-- Navigation --}}
-    <nav class="flex gap-6 text-sm text-gray-700">
-        <a href="#about" class="hover:text-green-700">About Us</a>
-        <a href="#news" class="hover:text-green-700">News</a>
-        <a href="#menu" class="hover:text-green-700">Menu</a>
-        <a href="#reservation" class="hover:text-green-700">Reservation</a>
-        <a href="#contact" class="hover:text-green-700">Contact</a>
-    </nav>
+ <header class="absolute top-0 left-0 w-full px-6 py-4 flex items-center z-50 text-[#F9F9F9]">
+  {{-- ロゴ --}}
+  <h1 class="text-xl font-serif font-bold">
+    <a href="/" class="text-[#F9F9F9] hover:text-[#A6AEC1]">Monte Tavola</a>
+  </h1>
+
+  {{-- ナビゲーション（右寄せ） --}}
+   <nav class="flex ml-auto pr-[100px] text-sm font-light tracking-wide">
+    <a href="#about" class="text-inherit hover:text-[#A6AEC1] mr-[36px]">About Us</a>
+    <a href="#news" class="text-inherit hover:text-[#A6AEC1] mr-[36px]">News</a>
+    <a href="#menu" class="text-inherit hover:text-[#A6AEC1] mr-[36px]">Menu</a>
+    <a href="#reservation" class="text-inherit hover:text-[#A6AEC1] mr-[36px]">Reservation</a>
+    <a href="#contact" class="text-inherit hover:text-[#A6AEC1]">Contact</a>
+  </nav>
 </header>

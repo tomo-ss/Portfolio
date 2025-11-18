@@ -3,8 +3,23 @@
 @section('title', 'Monte Tavola - トップページ')
 @section('description', '自然に囲まれた隠れ家レストラン Monte Tavola の公式サイトです。')
 @section('body_class', 'top-page')
-
+@section('header_style', 'wide') 
 @section('content')
+
+    {{-- メインビジュアルセクション --}}
+    <section class="relative aspect-[1440/704] w-full overflow-hidden">
+
+    {{-- 背景画像 --}}
+    <img src="{{ asset('images/main-visual.jpg') }}" alt="Monte Tavola メインビジュアル"
+        class="w-full h-full object-cover brightness-75">
+
+    {{-- ヘッダーを画像の上に重ねる --}}
+    <div class="absolute top-0 left-0 w-full z-50">
+        @include('partials.header')
+    </div>
+  </section>
+
+
     {{-- About Usセクション --}}
     <section id="about" class="bg-[#EFF1F5] py-16 px-6">
         <div class="max-w-3xl mx-auto text-center">
