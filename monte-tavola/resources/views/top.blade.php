@@ -21,6 +21,7 @@
 
 
     {{-- About Usセクション --}}
+    
     <section id="about" class="bg-[#EFF1F5] py-16 px-6">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-2xl md:text-3xl font-bold text-[#233758] mb-4">About Us</h2>
