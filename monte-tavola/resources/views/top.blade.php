@@ -3,141 +3,236 @@
 @section('title', 'Monte Tavola - トップページ')
 @section('description', '自然に囲まれた隠れ家レストラン Monte Tavola の公式サイトです。')
 @section('body_class', 'top-page')
-@section('header_style', 'wide') 
+@section('header_style', 'wide')
+
 @section('content')
 
-    {{-- メインビジュアルセクション --}}
-    <section class="relative aspect-[1440/704] w-full overflow-hidden">
+{{-- ========================================= --}}
+{{-- Hero / Main Visual --}}
+{{-- ========================================= --}}
+<section class="relative aspect-[1440/704] w-full overflow-hidden">
 
     {{-- 背景画像 --}}
     <img src="{{ asset('images/main-visual.jpg') }}" alt="Monte Tavola メインビジュアル"
-        class="w-full h-full object-cover brightness-75">
+         class="main-visual w-full h-full object-cover brightness-75">
 
-    {{-- ヘッダーを画像の上に重ねる --}}
+    {{-- ヘッダー（重ねる） --}}
     <div class="absolute top-0 left-0 w-full z-50">
         @include('partials.header')
     </div>
-  </section>
-
-
-    {{-- About Usセクション --}}
-    
-    <section id="about" class="bg-[#EFF1F5] py-16 px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-2xl md:text-3xl font-bold text-[#233758] mb-4">About Us</h2>
-            <p class="text-lg text-gray-700 font-semibold mb-6">私たちについて</p>
-
-            <p class="text-gray-700 leading-relaxed mb-4">
-                長野県の山あいにひっそりと佇む、夫婦で営む小さなイタリアンレストラン。<br>
-                澄んだ空気、木々のざわめき、季節のうつろい——そんな自然の豊かさに包まれながら、<br>
-                肩ひじ張らずに楽しめるカジュアルなイタリアンをご提供しています。
-            </p>
-
-            <p class="text-gray-700 leading-relaxed mb-4">
-                私たちが目指すのは、日常からふっと離れて、心がほどけるようなひととき。<br>
-                地元の食材を活かした料理と、温かみのある空間で、<br>
-                訪れる方が「また帰ってきたくなる場所」になれたら嬉しいです。
-            </p>
-
-            <p class="text-gray-700 leading-relaxed mb-6">
-                自然とともに、静かに、親しみ深く。<br>
-                ここでしか味わえない時間を、どうぞごゆっくりお楽しみください。
-            </p>
-
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#reservation" class="bg-[#233758] text-white px-6 py-3 rounded hover:bg-[#1c2e4e] transition">
-                    ご予約はこちら
-                </a>
-                <a href="#contact" class="text-[#233758] underline hover:text-green-700">
-                    ご予約以外のお問い合わせはこちらから
-                </a>
-            </div>
-        </div>
-    </section>
-
-{{-- Newsセクション --}}
-<section id="news" class="py-16 px-6 bg-white">
-    <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center text-[#233758] mb-2">News</h2>
-        <p class="text-center text-gray-700 mb-8">おしらせ</p>
-
-        <ul class="space-y-6">
-            <li class="border-b pb-4">
-                <h3 class="text-lg text-[#233758] font-semibold">秋限定メニュー販売開始</h3>
-                <p class="text-sm text-gray-500 mb-1">2025.10.21</p>
-            </li>
-            <li class="border-b pb-4">
-                <h3 class="text-lg text-[#233758] font-semibold">11月の臨時休業のおしらせ</h3>
-                <p class="text-sm text-gray-500 mb-1">2025.10.01</p>
-            </li>
-            <li class="border-b pb-4">
-                <h3 class="text-lg text-[#233758] font-semibold">10月の臨時休業のおしらせ</h3>
-                <p class="text-sm text-gray-500 mb-1">2025.09.01</p>
-            </li>
-        </ul>
-
-        <div class="mt-8 text-center">
-            <a href="/news" class="inline-block bg-[#233758] text-white px-6 py-3 rounded hover:bg-[#1c2e4e] transition">
-                View All
-            </a>
-        </div>
-    </div>
 </section>
 
-{{-- Menuセクション --}}
-<section id="menu" class="py-16 px-6 bg-[#EFF1F5]">
-    <div class="max-w-5xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center text-[#233758] mb-2">Menu</h2>
-        <p class="text-center text-gray-700 mb-8">メニュー</p>
 
-        <div class="grid md:grid-cols-3 gap-6">
-            {{-- Food --}}
-            <a href="/menu#food" class="relative block group rounded overflow-hidden shadow hover:shadow-md transition">
-                <img src="/images/menu_food.jpg" alt="Food" class="w-full h-48 object-cover group-hover:scale-105 transition">
-                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <span class="text-white text-xl font-semibold">Food</span>
-                </div>
-            </a>
+{{-- ========================================= --}}
+{{-- About Us --}}
+{{-- ========================================= --}}
+<section id="about" class="bg-[#F8F8F8] pt-16 pb-40 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
-            {{-- Drink --}}
-            <a href="/menu#drink" class="relative block group rounded overflow-hidden shadow hover:shadow-md transition">
-                <img src="/images/menu_drink.jpg" alt="Drink" class="w-full h-48 object-cover group-hover:scale-105 transition">
-                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <span class="text-white text-xl font-semibold">Drink</span>
-                </div>
-            </a>
+    {{-- 左：文章 --}}
+    <div class="text-left flex flex-col items-start">
+      <h2 class="text-5xl font-bold text-[#363427] mb-4">About Us</h2>
+      <p class="text-[#363427] leading-relaxed max-w-2xl mb-10">私たちについて</p>
 
-            {{-- Seasonal（Dessertの代わりに季節感を出す） --}}
-            <a href="/menu#seasonal" class="relative block group rounded overflow-hidden shadow hover:shadow-md transition">
-                <img src="/images/menu_seasonal.jpg" alt="Seasonal" class="w-full h-48 object-cover group-hover:scale-105 transition">
-                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <span class="text-white text-xl font-semibold">Seasonal</span>
-                </div>
-            </a>
-        </div>
+      <div class="space-y-4 text-[#363427] leading-relaxed text-[16px]">
+        <p>
+          長野県の山あいにひっそりと佇む、夫婦で営む小さなイタリアンレストラン。<br>
+          澄んだ空気、木々のざわめき、季節のうつろい——そんな自然の豊かさに包まれながら、<br>
+          肩ひじ張らずに楽しめるカジュアルなイタリアンをご提供しています。
+        </p>
+        <p>
+          私たちが目指すのは、日常からふっと離れて、心がほどけるようなひととき。<br>
+          地元の食材を活かした料理と、温かみのある空間で、<br>
+          訪れる方が「また帰ってきたくなる場所」になれたら嬉しいです。
+        </p>
+        <p>
+          自然とともに、静かに、親しみ深く。<br>
+          ここでしか味わえない時間を、どうぞごゆっくりお楽しみください。
+        </p>
+      </div>
+
+      {{-- ボタン --}}
+      <a href="#reservation"
+        class="inline-flex w-full md:w-[300px] h-[56px] md:h-[64px]
+              px-6 justify-center items-center
+              rounded-[10px] border border-[#363427]
+              text-[#363427] font-semibold text-lg
+              hover:bg-[#363427] hover:text-white transition mt-6">
+        ご予約はこちら
+      </a>
+      <br>
+
+      <a href="#contact" class="mt-3 inline-block text-[#363427] underline hover:text-green-700 font-medium">
+        ご予約以外のお問い合わせはこちらから
+      </a>
     </div>
+
+{{-- 右：画像（左下にスタッフを重ねる） --}}
+<div class="relative w-full flex justify-center mt-6">
+
+  {{-- パスタ（大） --}}
+  <div class="w-[560px] h-[380px] overflow-hidden shadow-md relative z-10">
+      <img src="{{ asset('images/about_pasta.jpg') }}" 
+           alt="シーフードパスタ" 
+           class="w-full h-full object-cover">
+  </div>
+
+  {{-- スタッフ（小） 少し下に重ねる --}}
+  <div class="w-[320px] h-[210px] overflow-hidden shadow-md absolute bottom-[-180px] left-[-40px] z-20">
+      <img src="{{ asset('images/about_staff.jpg') }}" 
+           alt="スタッフの写真" 
+           class="w-full h-full object-cover">
+  </div>
+
+</div>
 </section>
 
-{{-- Accessセクション（TOP用） --}}
-<section id="access" class="py-16 px-6 bg-white">
-    <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#233758] mb-2">Access</h2>
-        <p class="text-gray-700 mb-8">アクセス</p>
 
-        {{-- Googleマップ埋め込み --}}
+
+{{-- ========================================= --}}
+{{-- News --}}
+{{-- ========================================= --}}
+<section id="news" class="py-16 px-6 md:px-12 bg-[#F1ECEB]">
+  <div class="max-w-7xl mx-auto">
+
+    <h2 class="text-5xl font-bold text-center text-[#363427] mb-2">News</h2>
+    <p class="text-center text-[#363427] mb-8">おしらせ</p>
+
+    <div class="flex flex-col md:flex-row gap-6 justify-center">
+      <div class="border rounded p-4 shadow-sm flex-1">
+        <h3 class="text-lg text-[#363427] font-semibold">秋限定メニュー販売開始</h3>
+        <p class="text-sm text-gray-500">2025.10.21</p>
+      </div>
+
+      <div class="border rounded p-4 shadow-sm flex-1">
+        <h3 class="text-lg text-[#363427] font-semibold">11月の臨時休業のおしらせ</h3>
+        <p class="text-sm text-gray-500">2025.10.01</p>
+      </div>
+
+      <div class="border rounded p-4 shadow-sm flex-1">
+        <h3 class="text-lg text-[#363427] font-semibold">10月の臨時休業のおしらせ</h3>
+        <p class="text-sm text-gray-500">2025.09.01</p>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/news" class="inline-block bg-[#363427] text-white px-6 py-3 rounded hover:bg-[#F1ECEB] transition">
+        View All
+      </a>
+    </div>
+  </div>
+</section>
+
+
+{{-- ========================================= --}}
+{{-- Menu --}}
+{{-- ========================================= --}}
+<section id="menu" class="py-14 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <h2 class="text-5xl font-bold text-center text-[#363427] mb-2">Menu</h2>
+    <p class="text-center text-[#363427] mb-6">メニュー</p>
+
+    {{-- 横並び調整済み --}}
+    <div class="flex flex-wrap justify-center gap-6">
+
+      {{-- Food --}}
+      <div class="relative w-[340px] h-[390px] overflow-hidden rounded">
+        <img src="/images/menu_food.png" class="w-full h-full object-cover">
+
+        <span class="absolute inset-0 flex items-center justify-center
+                     text-white text-2xl font-semibold">
+          Food
+        </span>
+
+        <a href="/menu#food"
+           class="absolute bottom-16 left-1/2 -translate-x-1/2
+                  px-5 py-2 rounded-[10px]
+                  bg-[#F8F8F8]/90 text-[#363427] 
+                  text-sm font-medium
+                  hover:bg-[#363427] hover:text-white transition">
+          View Menu
+        </a>
+      </div>
+
+      {{-- Drink --}}
+      <div class="relative w-[340px] h-[390px] overflow-hidden rounded">
+        <img src="/images/menu_drink.png" class="w-full h-full object-cover">
+
+        <span class="absolute inset-0 flex items-center justify-center
+                     text-white text-2xl font-semibold">
+          Drink
+        </span>
+
+        <a href="/menu#drink"
+           class="absolute bottom-16 left-1/2 -translate-x-1/2
+                  px-5 py-2 rounded-[10px]
+                  bg-[#F8F8F8]/90 text-[#363427] 
+                  text-sm font-medium
+                  hover:bg-[#363427] hover:text-white transition">
+          View Menu
+        </a>
+      </div>
+
+      {{-- Seasonal --}}
+      <div class="relative w-[340px] h-[390px] overflow-hidden rounded">
+        <img src="/images/menu_seasonal.png" class="w-full h-full object-cover">
+
+        <span class="absolute inset-0 flex items-center justify-center
+                     text-white text-2xl font-semibold">
+          Seasonal
+        </span>
+
+        <a href="/menu#seasonal"
+           class="absolute bottom-16 left-1/2 -translate-x-1/2
+                  px-5 py-2 rounded-[10px]
+                  bg-[#F8F8F8]/90 text-[#363427] 
+                  text-sm font-medium
+                  hover:bg-[#363427] hover:text-white transition">
+          View Menu
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+{{-- ========================================= --}}
+{{-- Access --}}
+{{-- ========================================= --}}
+<section id="access" class="py-16 px-6 md:px-12 bg-[#F1ECEB]">
+    <div class="max-w-7xl mx-auto text-center">
+
+        <h2 class="text-5xl font-bold text-[#363427] mb-2">Access</h2>
+        <p class="text-[#363427] mb-8">アクセス</p>
+
         <div class="mb-8">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.000000000000!2d138.000000000000!3d36.000000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x0000000000000000!2sMonte%20Tavola!5e0!3m2!1sja!2sjp!4v0000000000000"
-                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.521870216447!2d139.81070087611593!3d35.71003467258079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018894ec7c244b7%3A0x6a11145892556277!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1636592400000!5m2!1sja!2sjp"
+                width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
 
-        {{-- 詳細ページへのボタン --}}
-        <a href="/access" class="inline-block bg-[#233758] text-white px-6 py-3 rounded hover:bg-[#1c2e4e] transition">
+        <a href="/access" class="inline-block bg-[#363427] text-white px-6 py-3 rounded hover:bg-[#1c2e4e] transition">
             View Details
         </a>
     </div>
 </section>
+
+
+<script>
+    window.addEventListener('load', () => {
+        document.querySelector('.main-visual').classList.add('loaded');
+    });
+    
+</script>
+
+
+
 
 @endsection
