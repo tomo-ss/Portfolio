@@ -17,8 +17,9 @@
 
 ## 実装・公開サイト
 
-- 公開サイト  
+- 公開サイト：  
   https://monte-tavola.site/
 
-- 実装リポジトリ（Laravel）
+- 実装リポジトリ（Laravel）：  
   https://github.com/tomo-ss/monte-tavola
+
